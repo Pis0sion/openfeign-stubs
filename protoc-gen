@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ *  Stubs Generator
+ * @author  Pis0sion
+ * @date  2022/10/11 11:05 上午
+ */
+
+use Pis0sion\OpenfeignStubs\SyncStubsGenerator;
+
+// 项目根目录
+$stubPath = getcwd();
+
+require_once $stubPath . '/vendor/autoload.php';
+
+// 生成的stubs文件目录
+(new SyncStubsGenerator($stubPath . '/src/Contract', $stubPath . '/src/Stubs'))->generate();

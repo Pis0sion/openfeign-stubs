@@ -9,7 +9,6 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-
 namespace Pis0sion\OpenfeignStubs\Contract;
 
 /**
@@ -17,22 +16,15 @@ namespace Pis0sion\OpenfeignStubs\Contract;
  */
 interface WorkerCenterServiceFactoryInterface
 {
-
     /**
-     * getProviderProfileByLaunch
-     * @param string $username
-     * @param string $password
-     * @param string $remoteAddr
+     * getProviderProfileByLaunch.
      * @return mixed
      */
     public function getProviderProfileByLaunch(string $username, string $password, string $remoteAddr = '127.0.0.1');
 
     /**
-     * getMembersStatisticsByAreaIDOrCategoryID
-     * @param int $areaID
-     * @param int $categoryID
+     * getMembersStatisticsByAreaIDOrCategoryID.
      * @return mixed
      */
     public function getMembersStatisticsByAreaIDOrCategoryID(int $areaID = 0, int $categoryID = 0);
-
 }

@@ -11,19 +11,15 @@ declare(strict_types=1);
  */
 namespace Pis0sion\OpenfeignStubs\Stubs\PublicCenter;
 
+use App\Annotation\Authz;
 use Pis0sion\Openfeign\OpenFeignClient;
 use Pis0sion\OpenfeignStubs\Contract\PublicCenterServiceFactoryInterface;
 
 /**
- * \Pis0sion\OpenfeignStubs\Stubs\PublicCenter\PublicCenterStubsFactory.
+ * \Pis0sion\OpenfeignStubs\Contract\PublicCenterServiceFactoryInterface.
  */
 class PublicCenterStubsFactory extends OpenFeignClient implements PublicCenterServiceFactoryInterface
 {
-    /**
-     * @var string
-     */
-    protected $serviceName = 'public-center';
-
     /**
      * sendVerifyCodeByScene.
      * @return mixed
@@ -31,5 +27,17 @@ class PublicCenterStubsFactory extends OpenFeignClient implements PublicCenterSe
     public function sendVerifyCodeByScene(string $mobile = '', int $verifyCode = 1000)
     {
         return $this->__request(__FUNCTION__, array_filter(compact('mobile', 'verifyCode')));
+    }
+
+    #[Authz]
+    public function testAst()
+    {
+        return $this->__request(__FUNCTION__, []);
+    }
+
+    #[Authz]
+    public function testArea($name)
+    {
+        return $this->__request(__FUNCTION__, array_filter(compact('name')));
     }
 }

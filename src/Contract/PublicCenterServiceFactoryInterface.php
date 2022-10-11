@@ -11,6 +11,8 @@ declare(strict_types=1);
  */
 namespace Pis0sion\OpenfeignStubs\Contract;
 
+use App\Annotation\Authz;
+
 /**
  * \Pis0sion\OpenfeignStubs\Contract\PublicCenterServiceFactoryInterface.
  */
@@ -21,4 +23,10 @@ interface PublicCenterServiceFactoryInterface
      * @return mixed
      */
     public function sendVerifyCodeByScene(string $mobile = '', int $verifyCode = 1000);
+
+    #[Authz]
+    public function testAst();
+
+    #[Authz]
+    public function testArea($name);
 }
